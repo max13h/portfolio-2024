@@ -1,0 +1,90 @@
+@import url("./base/index");
+@import url("./components/index");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'luxeuno';
+  src: url('../fonts/luxeuno-heavy-webfont.woff2') format('woff2'),
+       url('../fonts/luxeuno-heavy-webfont.woff') format('woff');
+  font-weight: 900;
+}
+@font-face {
+font-family: 'luxeuno';
+src: url('../fonts/luxeuno-bold-webfont.woff2') format('woff2'),
+     url('../fonts/luxeuno-bold-webfont.woff') format('woff');
+font-weight: 700;
+}
+@font-face {
+font-family: 'luxeuno';
+src: url('../fonts/luxeuno-semibold-webfont.woff2') format('woff2'),
+     url('../fonts/luxeuno-semibold-webfont.woff') format('woff');
+font-weight: 600;
+}
+@font-face {
+  font-family: 'luxeuno';
+  src: url('../fonts/luxeuno-regular-webfont.woff2') format('woff2'),
+       url('../fonts/luxeuno-regular-webfont.woff') format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'luxeuno';
+  src: url('../fonts/luxeuno-light-webfont.woff2') format('woff2'),
+  url('../fonts/luxeuno-light-webfont.woff') format('woff');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'luxeuno';
+  src: url('../fonts/luxeuno-ultralight-webfont.woff2') format('woff2'),
+  url('../fonts/luxeuno-ultralight-webfont.woff') format('woff');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'luxeuno';
+  src: url('../fonts/luxeuno-thin-webfont.woff2') format('woff2'),
+       url('../fonts/luxeuno-thin-webfont.woff') format('woff');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'poppins';
+  src: url('../fonts/poppins-black-webfont.woff2') format('woff2'),
+       url('../fonts/poppins-black-webfont.woff') format('woff');
+  font-weight: 800 900;
+}
+@font-face {
+  font-family: 'poppins';
+  src: url('../fonts/poppins-bold-webfont.woff2') format('woff2'),
+       url('../fonts/poppins-bold-webfont.woff') format('woff');
+  font-weight: 700;
+}
+@font-face {
+font-family: 'poppins';
+src: url('../fonts/poppins-semibold-webfont.woff2') format('woff2'),
+     url('../fonts/poppins-semibold-webfont.woff') format('woff');
+font-weight: 500 600;
+}
+@font-face {
+  font-family: 'poppins';
+  src: url('../fonts/poppins-regular-webfont.woff2') format('woff2'),
+       url('../fonts/poppins-regular-webfont.woff') format('woff');
+  font-weight: 400;
+}
+@font-face {
+font-family: 'poppins';
+src: url('../fonts/poppins-extralight-webfont.woff2') format('woff2'),
+     url('../fonts/poppins-extralight-webfont.woff') format('woff');
+font-weight: 100 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: luxeuno, sans-serif;
+  @apply font-bold
+}
+
+body {
+  @apply bg-light;
+  font-family: poppins, sans-serif;
+}
