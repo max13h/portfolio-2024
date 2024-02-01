@@ -2,6 +2,11 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
-    '@nuxtjs/tailwindcss'
-  ]
+    '@nuxtjs/tailwindcss',
+    '@hypernym/nuxt-anime'
+  ],
+  anime: {
+    provide: false,
+    composables: true
+  }
 })

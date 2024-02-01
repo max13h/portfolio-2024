@@ -1,13 +1,10 @@
 <template>
   <div>
-    <p>
-      test
-    </p>
+    <Welcome />
   </div>
 </template>
 
 <script setup lang="ts">
-
 </script>
 
 <style scoped>

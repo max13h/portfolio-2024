@@ -1,4 +1,8 @@
 @layer base {
+  .main-heading * {
+    font-size: calc(2rem + 10vw)
+  }
+
   h1 {
     font-size: calc(1.375rem + 1.5vw)
   }
