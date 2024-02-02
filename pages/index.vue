@@ -1,14 +1,18 @@
 <template>
   <div class="relative">
-    <Navbar />
+    <!-- <Entrance v-if="isEntrance" @completed="isEntrance = false" /> -->
+    <!-- <Navbar /> -->
     <Welcome />
-    <!-- <Background /> -->
     <Projects />
+    <!-- <Background /> -->
   </div>
 </template>
 
 <script setup lang="ts">
+let isEntrance = ref(true)
+
 onMounted(() => {
+  const animeStore = useAnimeStore()
   const lenis = useLenisStore()
 
 })

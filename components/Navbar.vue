@@ -16,7 +16,6 @@ onMounted(() => {
   const { lenis } = useLenisStore()
 
   lenis.on('scroll', (e) => {
-    console.log(window.screen.height);
     turnWhite.value = e.animatedScroll > (window.screen.height - 30)
   })
 })
