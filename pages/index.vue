@@ -13,6 +13,8 @@ let isEntrance = ref(true)
 
 onMounted(() => {
   const animeStore = useAnimeStore()
+
+  useLenis()
 })
 </script>
 
