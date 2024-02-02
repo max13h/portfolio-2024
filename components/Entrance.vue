@@ -14,7 +14,7 @@
     </div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <h1 class="text-light text-xl font-light" :class="{'overflow-hidden': hiddenOverflow}">
-        <span class="heading-pop-up inline-block translate-y-full text-center">Portfolio max13h 2024</span>
+        <span class="heading-pop-up inline-block text-center">Portfolio max13h 2024</span>
       </h1>
     </div>
   </div>
@@ -26,49 +26,26 @@ const hiddenOverflow = ref(true)
 const emit = defineEmits(['completed'])
 
 onMounted(() => {
-  const animeStore = useAnimeStore()
+  const gsapStore = useGsapStore()
 
-  animeStore.timeline
-    .add({
-      targets: '.heading-pop-up',
-      translateY: ['100%', 0],
-      duration: 500,
-      easing: 'easeOutQuad',
-      complete: function(anim) {
+  gsapStore.gsap.timeline({onComplete: () => emit('completed')})
+    .from('.heading-pop-up', {
+      yPercent: 100,
+      duration: 0.5,
+      onComplete: () => {
         hiddenOverflow.value = false
       }
     })
-    .add({
-      targets: '.heading-pop-up',
-      scale: {
-        value: 500,
-        delay: 1000,
-        duration: 1500,
-        easing: 'easeInQuint'
-      },
-      opacity: {
-        value: [1, 0],
-        delay: 2000,
-        duration: 300,
-        easing: 'linear'
-      },
-    }, 500)
-    .add({
-      targets: '.entrance-line',
-      delay: useAnime.stagger(50),
-      translateX: (el, i) => `-${200 * (i || 1)}%`,
-      opacity: {
-        value: [1, 0],
-        delay: 1000,
-        duration: 300
-      },
-      duration: 500,
-      easing: 'easeInQuad',
-      complete: () => {
-        emit('completed')
-        console.log('completed');
-      }
+    .to('.heading-pop-up', {
+      opacity: 0,
+      duration: 0.5,
+      delay: 1
     })
+    .to('.entrance-line', {
+      stagger: 0.1,
+      xPercent: (index) => -100 * index - 200,
+      duration: 0.5
+    }, '-=0.1')
 })
 </script>
 
