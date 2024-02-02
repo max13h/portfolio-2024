@@ -1,14 +1,13 @@
 <template>
-  <div class="w-full h-screen absolute top-0 left-0 -z-50 overflow-hidden bg-center bg-cover" :style="backgroundString">
-</div>
+  <!-- <div class="w-full h-screen absolute top-0 left-0 -z-50 overflow-hidden bg-center bg-cover" :style="backgroundString"> -->
+<!-- </div> -->
+    <div>hello</div>
 </template>
 
 <script setup>
 const random = ref({
   rotation: 200
 })
-
-
 
 onMounted(() => {
   useAnime({
