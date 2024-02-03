@@ -4,7 +4,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@hypernym/nuxt-anime',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    '@nuxt/image'
   ],
   anime: {
     provide: false,
@@ -15,4 +16,12 @@ export default defineNuxtConfig({
       "defineStore"
     ]
   },
+  image: {
+    screens: {
+      'sm':	640,
+      'md':	768,
+      'lg':	1024,
+      'xl':	1280
+    }
+  }
 })
