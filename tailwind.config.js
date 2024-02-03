@@ -1,11 +1,9 @@
-export default {
-  theme: {
-    extend: {
-      colors: {
-        primary: "#e5ebeb",
-        dark: "#2c2727",
-        light: "#fdfcfc"
-      }
-    },
-  }
-}
+export const theme = {
+  extend: {
+    colors: {
+      primary: "#bbb6cc",
+      dark: "#0E0E0F",
+      light: "#f7f6f9"
+    }
+  },
+};
