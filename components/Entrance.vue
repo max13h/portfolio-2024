@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute z-50 w-full h-screen overflow-hidden">
+  <div class="z-50 w-full h-screen overflow-hidden sticky top-0">
     <div class="w-full h-full flex">
       <div class="entrance-line w-[10%] h-full bg-dark"></div>
       <div class="entrance-line w-[10%] h-full bg-dark"></div>
