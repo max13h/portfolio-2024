@@ -1,8 +1,8 @@
 <template>
   <div class="relative">
-    <Entrance v-if="gsapStore.isEntrance" />
-    <!-- <Navbar /> -->
-    <!-- <Welcome /> -->
+    <!-- <Entrance v-if="gsapStore.isEntrance" /> -->
+    <Navbar />
+    <Welcome />
     <!-- <Projects /> -->
     <!-- <Background /> -->
   </div>
@@ -16,12 +16,13 @@ onMounted(() => {
 
   const gsap = useGsap()
 
-  if(!gsapStore.entranceTL) {
-    throw new Error
-  }
+  // if(!gsapStore.entranceTL || !gsapStore.welcomeTL) {
+  //   throw new Error
+  // }
 
   gsap.timeline()
-    .add(gsapStore.entranceTL())
+    // .add(gsapStore.entranceTL())
+    .add(gsapStore.welcomeTL(), '-=0.5')
 })
 </script>
 
