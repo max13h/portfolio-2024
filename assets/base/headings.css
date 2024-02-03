@@ -1,6 +1,17 @@
 @layer base {
-  .main-heading * {
+  .h1-big,
+  .h1-big * {
     font-size: calc(2rem + 10vw)
+  }
+
+  .h2-big,
+  .h2-big * {
+    font-size: calc(8vw)
+  }
+
+  .h3-big,
+  .h3-big * {
+    font-size: calc(6vw)
   }
 
   h1 {

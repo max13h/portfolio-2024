@@ -92,3 +92,7 @@ body {
   font-family: poppins, sans-serif;
   @apply bg-light
 }
+
+.bg-dark * {
+  @apply text-light
+}
