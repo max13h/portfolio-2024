@@ -1,9 +1,9 @@
 <template>
   <div class="relative">
-    <!-- <Entrance v-if="gsapStore.isEntrance" /> -->
+    <Entrance v-if="gsapStore.isEntrance" />
     <Navbar />
     <Welcome />
-    <!-- <Projects /> -->
+    <Aboutme />
     <!-- <Background /> -->
   </div>
 </template>
@@ -21,8 +21,9 @@ onMounted(() => {
   // }
 
   gsap.timeline()
-    // .add(gsapStore.entranceTL())
+    .add(gsapStore.entranceTL())
     .add(gsapStore.welcomeTL(), '-=0.5')
+    .add(gsapStore.aboutmeTL(), '<')
 })
 </script>
 
