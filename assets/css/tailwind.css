@@ -92,3 +92,16 @@ body {
 .bg-dark p * {
   @apply text-light
 }
+
+.v-popper--theme-max13h .v-popper__inner {
+  background: #f7f6f9;
+  color: #0e0e0f;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+}
+
+.v-popper--theme-max13h .v-popper__arrow-container {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(12%) saturate(775%) hue-rotate(182deg) brightness(100%) contrast(96%);
+  border: none;
+}

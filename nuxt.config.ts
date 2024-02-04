@@ -25,5 +25,8 @@ export default defineNuxtConfig({
       'lg':	1024,
       'xl':	1280
     }
-  }
+  },
+  buildModules: [
+    'floating-vue/nuxt',
+  ]
 })
