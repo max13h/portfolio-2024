@@ -1,6 +1,32 @@
 @layer base {
-  .h1-big,
-  .h1-big * {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: luxeuno, sans-serif;
+    @apply font-bold
+  }
+
+  h2 {
+    @apply text-sm font-light opacity-50
+  }
+
+  .text-big1 {
     font-size: calc(2rem + 10vw)
+  }
+  .text-big2 {
+    font-size: calc(1.5rem + 8vw)
+  }
+  .text-big3 {
+    font-size: calc(1.25rem + 6vw)
+  }
+  .text-big4 {
+    font-size: calc(1.15rem + 4vw)
+  }
+  .text-big4 {
+    font-size: calc(1.15rem + 4vw)
+  }
+  .text-big5 {
+    font-size: calc(1.15rem + 2vw)
+  }
+  .text-big6 {
+    font-size: calc(1rem + 1vw)
   }
 }

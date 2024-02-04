@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-screen overflow-hidden flex justify-center items-center">
-    <h1 class="h1-big w-full text-center inline-block">
+    <h1 class="text-big1 w-full text-center inline-block">
         <span :ref="letters[0]" class="">Hello,</span>
         <span class="flex flex-wrap justify-center">
           <span :ref="letters[1]" class="me-12 ">I'm </span>
