@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <Entrance v-if="gsapStore.isEntrance" />
+    <!-- <Entrance v-if="gsapStore.isEntrance" /> -->
     <Navbar />
     <Welcome />
     <AboutMe />
@@ -12,7 +12,7 @@
 const gsapStore = useGsapStore()
 
 onMounted(() => {
-  useLenis()
+  // useLenis()
 
   const gsap = useGsap()
 
@@ -21,7 +21,7 @@ onMounted(() => {
   // }
 
   gsap.timeline()
-    .add(gsapStore.entranceTL())
+    // .add(gsapStore.entranceTL())
     .add(gsapStore.welcomeTL(), '-=0.5')
     .add(gsapStore.aboutmeTL(), '<')
 })

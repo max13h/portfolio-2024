@@ -1,11 +1,11 @@
 <template>
-  <div class="aboutme">
+  <div class="aboutme overflow-hidden">
     <div class="bg-dark rounded-t-[128px] w-full h-16 translate-y-1"></div>
     <div class="w-full min-h-screen bg-dark  ">
-      <h2 class="p-4 text-light">About me</h2>
+      <h2 class="trigger-aboutme p-4 text-light">About me</h2>
       <div class="p-8">
         <div class="w-full relative">
-          <p class="text-big3 text-nowrap text-end">My name is <br/> <span class="font-bold tracking-widest">Maxime</span></p>
+          <p class="mynameis -block text-big3 text-nowrap text-end">My name is <br/> <span class="font-bold tracking-widest">Maxime</span></p>
           <div class="opacity-80 rounded-full overflow-hidden flex justify-center items-center absolute top-1/2 right-1/2
             w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64
             h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64">
@@ -203,9 +203,12 @@
 
 <script setup lang="ts">
 const isActive = ref('')
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 onMounted(() => {
   const gsap = useGsap()
+  gsap.registerPlugin(ScrollTrigger)
+
   const gsapStore = useGsapStore()
 
   const aboutmeTL = () => {
@@ -215,7 +218,20 @@ onMounted(() => {
         scrollTrigger: {
           scrub: true
         },
-      });
+      })
+      .from('.mynameis', {
+        scrollTrigger: {
+          trigger: '.trigger-aboutme',
+          start: '-100% 80%',
+          end: 'bottom 20%',
+          markers: true,
+          toggleActions: 'start pause reverse pause',
+          scrub: true,
+        },
+        x: 200,
+        rotation: 360,
+        duration: 3,
+      })
   }
 
   gsapStore.aboutmeTL = aboutmeTL
