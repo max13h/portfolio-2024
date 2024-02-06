@@ -1,18 +1,34 @@
 <template>
-  <div class="aboutme overflow-hidden">
-    <div class="bg-dark rounded-t-[128px] w-full h-16 translate-y-1"></div>
-    <div class="w-full min-h-screen bg-dark  ">
-      <h2 class="trigger-aboutme block p-4 text-light">About me</h2>
-      <div class="p-8">
-        <div class="w-full relative">
-          <p class="mynameis bg-red-400 inline-block text-big3 text-nowrap text-end w-full">My name is <br/> <span class="font-bold tracking-widest">Maxime</span></p>
-          <div class="opacity-80 rounded-full overflow-hidden flex justify-center items-center absolute top-1/2 right-1/2
+  <div>
+    <div id="aboutme" class="w-full h-16 bg-dark rounded-t-[8vw]"></div>
+    <div class="bg-dark">
+      <div class="p-8 relative">
+        <div class="
+          w-full
+          absolute
+          -top-[7.5rem]
+          right-0
+          sm:-top-[9.5rem]
+          sm:right-4
+          md:-top-[10.5rem]
+          md:right-8
+          lg:-top-[11.5rem]
+          lg:right-16
+          xl:-top-[14rem]
+          xl:right-16
+
+        ">
+          <p class="t-mynameis mix-blend-difference inline-block text-big3 text-nowrap text-end w-full">
+            My name is <br/>
+            <span class="font-bold tracking-widest">Maxime</span>
+          </p>
+          <div class="t-imageofme opacity-80 rounded-full overflow-hidden flex justify-center items-center absolute top-1/2 left-8
             w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64
             h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64">
             <NuxtImg src="/me.jpg" alt="Picture of max13h" sizes="128px sm:160px md:192px lg:224px xl:256px"></NuxtImg>
           </div>
         </div>
-        <p class="text-big4 mt-32">I'm a junior</p>
+        <p class="t-imajunior text-big4">I'm a junior</p>
         <p class="text-big4 text-center font-bold tracking-widest">Web Developer</p>
         <p class="text-big5 text-nowrap text-center mt-32 mb-16">Proficient in...</p>
         <div class="w-full flex flex-col items-center md:flex-row md:justify-evenly">
@@ -213,18 +229,40 @@ onMounted(() => {
     gsap.registerPlugin(ScrollTrigger)
 
     return gsap.timeline()
-      .from('.mynameis', {
+      .from('.t-mynameis', {
         scrollTrigger: {
-          trigger: '.trigger-aboutme',
-          start: '-300% center',
-          end: '+=200',
-          // markers: true,
+          trigger: '#aboutme',
+          start: '-500% center',
+          end: 'top center',
           scrub: 1,
-          pin: '.mynameis',
-          pinReparent: true
         },
-        x: '1000px',
+        opacity: 0,
+        xPercent: 10,
+        yPercent: -300,
       })
+      .from('.t-imageofme', {
+        scrollTrigger: {
+          trigger: '#aboutme',
+          start: '-500% center',
+          end: '-100% center',
+          markers: true,
+          scrub: 1,
+        },
+        opacity: 0,
+        xPercent: 400,
+      })
+      // .from('.t-imajunior', {
+      //   scrollTrigger: {
+      //     trigger: '.t-imajunior',
+      //     start: 'top center',
+      //     end: 'bottom center',
+      //     markers: true,
+      //     scrub: 1,
+      //   },
+      //   opacity: 0,
+      //   xPercent: 10,
+      //   yPercent: -300,
+      // })
   }
 
   gsapStore.aboutmeTL = aboutmeTL

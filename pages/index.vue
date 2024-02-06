@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="relative overflow-x-hidden">
     <!-- <Entrance v-if="gsapStore.isEntrance" /> -->
     <Navbar />
     <Welcome />
@@ -18,12 +18,11 @@ onMounted(() => {
   // }
 
   gsap.timeline()
-    .add(gsapStore.entranceTL())
+    // .add(gsapStore.entranceTL())
     .add(gsapStore.welcomeTL(), '-=0.5')
     .add(gsapStore.aboutmeTL(), '<')
 
   watchEffect(() => {
-    console.log('inside', gsapStore.isWelcomed);
     if(gsapStore.isWelcomed) {
       const lenis = useLenis()
     }
