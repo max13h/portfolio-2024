@@ -58,7 +58,8 @@ font-weight: 600;
 
 html {
   --bottom-circle: 100%;
-  --display-circle: none
+  --display-circle: none;
+  overflow: hidden;
 }
 
 * {

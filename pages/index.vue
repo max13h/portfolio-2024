@@ -4,29 +4,32 @@
     <Navbar />
     <Welcome />
     <AboutMe />
-    <!-- <Background /> -->
   </div>
 </template>
 
 <script setup lang="ts">
+import { gsap } from "gsap"
+
 const gsapStore = useGsapStore()
 
 onMounted(() => {
-  // useLenis()
-
-  const gsap = useGsap()
-
   // if(!gsapStore.entranceTL || !gsapStore.welcomeTL) {
   //   throw new Error
   // }
 
   gsap.timeline()
-    // .add(gsapStore.entranceTL())
+    .add(gsapStore.entranceTL())
     .add(gsapStore.welcomeTL(), '-=0.5')
     .add(gsapStore.aboutmeTL(), '<')
+
+  watchEffect(() => {
+    console.log('inside', gsapStore.isWelcomed);
+    if(gsapStore.isWelcomed) {
+      const lenis = useLenis()
+    }
+  })
 })
 </script>
 
 <style scoped>
-
 </style>

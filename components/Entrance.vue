@@ -24,12 +24,13 @@
 </template>
 
 <script setup lang="ts">
+import { gsap } from "gsap"
+
 const hiddenOverflow = ref(true)
 
-onMounted(() => {
-  const gsap = useGsap()
-  const gsapStore = useGsapStore()
+const gsapStore = useGsapStore()
 
+onMounted(() => {
   const entranceTL = () => {
     return gsap.timeline({ onComplete: () => { return gsapStore.isEntrance = false }})
       .to('.heading-pop-up', {
