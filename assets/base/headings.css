@@ -3,10 +3,6 @@
     @apply font-bold;
   }
 
-  h2 {
-    @apply text-sm font-light opacity-50
-  }
-
   .text-big1 {
     font-size: calc(2rem + 10vw)
   }
