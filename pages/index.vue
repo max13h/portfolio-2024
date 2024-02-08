@@ -1,12 +1,12 @@
 <template>
   <div class="relative overflow-x-hidden">
-    <!-- <Entrance v-if="gsapStore.isEntrance" />
+    <!-- <Entrance v-if="gsapStore.isEntrance" /> -->
     <Navbar />
     <Welcome />
     <AboutMe />
     <div>
       lorem1000
-    </div> -->
+    </div>
     <MyProjects />
   </div>
 </template>
@@ -23,8 +23,8 @@ onMounted(() => {
 
   gsap.timeline()
     // .add(gsapStore.entranceTL())
-    // .add(gsapStore.welcomeTL(), '-=0.5')
-    // .add(gsapStore.aboutmeTL(), '<')
+    .add(gsapStore.welcomeTL(), '-=0.5')
+    .add(gsapStore.aboutmeTL(), '<')
     .add(gsapStore.myProjectsTL())
 
   watchEffect(() => {

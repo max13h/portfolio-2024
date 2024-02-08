@@ -71,9 +71,11 @@ body {
   font-family: luxeuno, sans-serif;
 }
 
-.bg-dark p,
-.bg-dark p * {
+.bg-dark p {
   @apply text-light
+}
+.bg-light p {
+  @apply text-dark
 }
 
 .v-popper--theme-max13h .v-popper__inner {
