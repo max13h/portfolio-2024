@@ -4,7 +4,7 @@
     <Navbar />
     <Welcome />
     <AboutMe id="AboutMe" />
-    <!-- <MyProjects /> -->
+    <MyProjects />
   </div>
 </template>
 
