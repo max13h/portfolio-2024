@@ -13,4 +13,6 @@ export const useLenis = () => {
   }
 
   requestAnimationFrame(raf)
+
+  return lenis
 }

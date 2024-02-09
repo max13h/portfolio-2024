@@ -6,7 +6,7 @@
           <span :ref="letters[1]" class="max13h relative">max13h</span>
         </span>
     </h1>
-    <div class="scroll-down absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col justify-center items-center">
+    <div class="scroll-down absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col justify-center items-center">
       <p>Scroll down !</p>
       <Icon name="fluent:arrow-circle-down-12-filled" size="2rem"  />
     </div>
@@ -106,6 +106,14 @@ onMounted(() => {
     .to('.max13h', {
       overflow: 'visible'
     }, '<')
+    .from('.scroll-down', {
+      duration: 0.3,
+      opacity: 0
+    }, '<')
+    .from('nav', {
+        duration: 1,
+        opacity: 0,
+      }, '<')
 })
 </script>
 
