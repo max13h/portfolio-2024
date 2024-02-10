@@ -84,8 +84,11 @@ body {
   @apply text-dark
 }
 
-.divider-block {
+.divider-block-lg {
   @apply
     h-56 sm:h-64 md:h-72 lg:h-80 xl:h-96
-    bg-teal-600
+}
+.divider-block-sm {
+  @apply
+    h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64
 }

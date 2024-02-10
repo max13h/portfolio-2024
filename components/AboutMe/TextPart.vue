@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <div class="divider-block"></div>
+    <div class="divider-block-lg"></div>
 
     <div class="t-group-imajuniorwebdeveloper">
       <p class="
@@ -36,7 +36,9 @@
       </p>
       <p ref="webdeveloperLetters" class="t-webdeveloper mix-blend-difference w-full relative inline-block text-big4 text-center font-bold tracking-widest !text-big3">Web Developer</p>
     </div>
-    <div class="divider-block"></div>
+
+    <div class="divider-block-sm"></div>
+
     <div class="t-group-proficientin">
       <p class="t-proficientin text-big4 text-nowrap text-center mix-blend-difference text-light">Proficient in...</p>
     </div>
@@ -82,7 +84,7 @@ onMounted(() => {
       scrollTrigger: {
         trigger: '.t-group-mynameis',
         start: '-200px 55%',
-        end: 'bottom 55%',
+        end: 'top 55%',
         scrub: 1.5,
       },
       '--opacity-land1': 0,
@@ -102,7 +104,7 @@ onMounted(() => {
     .from('.t-webdeveloper-letters', {
       scrollTrigger: {
         trigger: '.t-group-imajuniorwebdeveloper',
-        start: '-100 55%',
+        start: '-200 55%',
         end: 'center 55%',
         scrub: 1.5,
       },
@@ -128,7 +130,7 @@ onMounted(() => {
       scrollTrigger: {
         trigger: '.t-group-imajuniorwebdeveloper',
         start: '-200px 55%',
-        end: 'bottom 55%',
+        end: 'top 55%',
         scrub: 1.5,
       },
       '--opacity-land2': 0,
@@ -160,18 +162,18 @@ onMounted(() => {
   content: '';
   filter: var(--blur-land1);
   opacity: var(--opacity-land1);
-  @apply w-full h-[50%] absolute top-1/2 left-0 -translate-y-1/2 bg-dark rounded-2xl -z-10
+  @apply w-full h-[50%] absolute top-1/2 left-0 -translate-y-1/2 bg-dark rounded-3xl xl:rounded-[3rem] -z-10
 }
 .t-group-imajuniorwebdeveloper:after {
   content: '';
   filter: var(--blur-land2);
   opacity: var(--opacity-land2);
-  @apply w-full h-[50%] absolute top-1/2 left-0 -translate-y-1/2 bg-dark rounded-2xl -z-10
+  @apply w-full h-[50%] absolute top-1/2 left-0 -translate-y-1/2 bg-dark rounded-3xl xl:rounded-[3rem] -z-10
 }
 .t-group-proficientin:after {
   content: '';
   filter: var(--blur-land3);
   opacity: var(--opacity-land3);
-  @apply w-full h-full absolute top-1/2 left-0 bg-dark rounded-t-2xl -z-10
+  @apply w-full h-full absolute top-1/2 left-0 bg-dark rounded-t-3xl xl:rounded-t-[3rem] -z-10
 }
 </style>
