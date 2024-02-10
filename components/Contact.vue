@@ -1,0 +1,115 @@
+<template>
+  <div class="mt-32">
+    <div id="Contact" class="w-full h-24 bg-dark rounded-t-[8vw] relative p-8">
+      <h2 class="
+          inline-block
+          text-big2
+          mix-blend-difference
+          text-light
+          font-medium
+      ">
+        Contact me
+      </h2>
+      <p class="text-big5">I will be happy to connect with you</p>
+    </div>
+    <div class="bg-dark h-[80vh]">
+      <div class="flex flex-col sm:flex-row items-center justify-evenly h-full">
+        <NuxtLink to="https://www.linkedin.com/in/max13h/" target="_blank" class="w-fit">
+          <Icon
+            name="mdi:linkedin"
+            size="16rem"
+            class="
+              icon-light
+              w-32 sm:w-36 md:w-40 lg:w-48 xl:w-56
+              h-32 sm:h-36 md:h-4w-40 lg:h-48 xl:h-5w-56"
+            />
+        </NuxtLink>
+
+        <NuxtLink to="mailto:contact@max13h.fr" class="w-fit">
+          <Icon
+            name="fluent:mail-48-filled"
+            size="16rem"
+            class="
+              icon-light
+              w-32 sm:w-36 md:w-40 lg:w-48 xl:w-56
+              h-32 sm:h-36 md:h-4w-40 lg:h-48 xl:h-5w-56"
+              @click="copyContent"
+            />
+        </NuxtLink>
+      </div>
+      <TransitionRoot appear :show="modalOpened">
+        <Dialog @close="modalOpened = false" class="relative z-10">
+          <TransitionChild
+            as="div"
+            enter="duration-300 ease-out"
+            enter-from="opacity-0"
+            enter-to="opacity-100"
+            leave="duration-200 ease-in"
+            leave-from="opacity-100"
+            leave-to="opacity-0"
+          >
+            <div class="fixed inset-0 bg-black/25" />
+          </TransitionChild>
+
+          <div class="fixed inset-0 overflow-y-auto">
+            <div
+              class="flex min-h-full items-center justify-center p-4"
+            >
+              <TransitionChild
+                as="div"
+                enter="duration-300 ease-out"
+                enter-from="opacity-0 scale-95"
+                enter-to="opacity-100 scale-100"
+                leave="duration-200 ease-in"
+                leave-from="opacity-100 scale-100"
+                leave-to="opacity-0 scale-95"
+              >
+                <DialogPanel class="bg-dark p-8 rounded-2xl">
+                  <p>
+                    {{ clipboardMessage }}
+                    <Icon :name="isMailCopied ? 'fluent:checkmark-circle-12-regular' : 'fluent:dismiss-circle-12-regular'" style="filter: invert(100%)" />
+                  </p>
+                </DialogPanel>
+              </TransitionChild>
+            </div>
+          </div>
+        </Dialog>
+      </TransitionRoot>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { TransitionRoot, TransitionChild, Dialog, DialogPanel, DialogTitle, DialogDescription } from '@headlessui/vue'
+
+const modalOpened = ref(false)
+const clipboardMessage = ref('Email copied to clipboard')
+const isMailCopied = ref(false)
+
+const copyContent = async () => {
+  modalOpened.value = true
+
+  try {
+    await navigator.clipboard.writeText('contact@max13h.fr');
+    clipboardMessage.value = 'Email copied to clipboard'
+    isMailCopied.value = true
+
+  } catch (err) {
+    console.log(err);
+    clipboardMessage.value = 'Failed to copy email'
+    isMailCopied.value = false
+  }
+}
+
+</script>
+
+<style scoped>
+.icon-light {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(25%) saturate(614%) hue-rotate(203deg) brightness(101%) contrast(95%);
+  @apply transition-all duration-150
+}
+
+.icon-light:hover {
+  @apply scale-105
+}
+</style>
