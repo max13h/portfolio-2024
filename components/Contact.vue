@@ -19,7 +19,7 @@
             name="mdi:linkedin"
             size="16rem"
             class="
-              icon-light
+              filter-light
               w-32 sm:w-36 md:w-40 lg:w-48 xl:w-56
               h-32 sm:h-36 md:h-4w-40 lg:h-48 xl:h-5w-56"
             />
@@ -30,7 +30,7 @@
             name="fluent:mail-48-filled"
             size="16rem"
             class="
-              icon-light
+              filter-light
               w-32 sm:w-36 md:w-40 lg:w-48 xl:w-56
               h-32 sm:h-36 md:h-4w-40 lg:h-48 xl:h-5w-56"
               @click="copyContent"
@@ -65,9 +65,9 @@
                 leave-to="opacity-0 scale-95"
               >
                 <DialogPanel class="bg-dark p-8 rounded-2xl">
-                  <p>
+                  <p class="text-light">
                     {{ clipboardMessage }}
-                    <Icon :name="isMailCopied ? 'fluent:checkmark-circle-12-regular' : 'fluent:dismiss-circle-12-regular'" style="filter: invert(100%)" />
+                    <Icon :name="isMailCopied ? 'fluent:checkmark-circle-12-regular' : 'fluent:dismiss-circle-12-regular'" class="filter-light" />
                   </p>
                 </DialogPanel>
               </TransitionChild>
@@ -104,12 +104,11 @@ const copyContent = async () => {
 </script>
 
 <style scoped>
-.icon-light {
-  filter: brightness(0) saturate(100%) invert(100%) sepia(25%) saturate(614%) hue-rotate(203deg) brightness(101%) contrast(95%);
+.filter-light {
   @apply transition-all duration-150
 }
 
-.icon-light:hover {
+.filter-light:hover {
   @apply scale-105
 }
 </style>
