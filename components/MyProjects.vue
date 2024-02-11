@@ -2,8 +2,9 @@
   <div>
     <div class="divider-block-lg bg-dark"></div>
     <div class="t-heading relative leading-none">
-      <h2 class="
-      ms-4
+      <h2 ref="discoverprojects" class="
+        t-discoverprojects
+        ms-4
         text-big2
         mix-blend-difference
         text-light
@@ -19,6 +20,7 @@
 
     <div
       class="
+        t-group-projects
         flex
         flex-col
         items-center
@@ -33,6 +35,7 @@
         v-for="(project, index) in projects"
         :key="index"
         class="
+          t-project
           relative
           w-[90vw]
           h-[90vw]
@@ -40,10 +43,10 @@
           overflow-hidden
           rounded-2xl
           group
-          sm:min-w-[90vw]
-          sm:h-[90vw]
-          md:min-w-[80vh]
-          md:h-[80vh]
+          sm:min-w-[75vw]
+          sm:h-[75vw]
+          md:min-w-[60vh]
+          md:h-[60vh]
           sm:me-8
           sm:last:me-0
           sm:mt-0
@@ -92,8 +95,8 @@
                 >
                   <DialogPanel class="bg-dark rounded-2xl h-[90vh] w-[90vw] shadow-2xl shadow-dark/50 overflow-y-scroll flex flex-col">
                     <div class="flex-grow p-8 flex flex-col">
-                      <h3 class="text-light text-big3">{{ project.name }}</h3>
-                      <p class="text-light">{{ project.description }}</p>
+                      <h3 class="text-light text-big3 leading-none">{{ project.name }}</h3>
+                      <p class="text-light my-4 lg:text-xl">{{ project.description }}</p>
 
                       <div class="flex justify-start items-center overflow-y-scroll my-2">
                         <NuxtLink v-for="(techno, technoIndex) in project.stack" :key="technoIndex" :to="techno.link" target="_blank" class="me-2 last:me-0">
@@ -106,7 +109,7 @@
                         {{ project.textLink }}
                       </NuxtLink>
                     </div>
-                    <p v-if="project.images.length > 1" class="text-light w-full text-center">
+                    <p v-if="project.images.length > 1" class="text-light w-full text-center lg:hidden">
                       Scroll
                       <Icon name="fluent:arrow-right-12-regular" class="filter-light" />
                     </p>
@@ -117,7 +120,7 @@
                         target="_blank"
                         class="min-w-24 sm:min-w-32 mx-4 flex justify-center items-center"
                       >
-                        <NuxtImg :src="image" class="mx-4 first:mx-0 rounded-3xl object-cover w-32" />
+                        <NuxtImg :src="image" class="mx-4 first:mx-0 rounded-3xl object-cover w-32 sm:w-64 md:w-72 lg:w-96 xl:w-[26rem]" />
                       </NuxtLink>
                     </div>
                   </DialogPanel>
@@ -134,6 +137,7 @@
 
 <script setup lang="ts">
 import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { TransitionRoot, TransitionChild, Dialog, DialogPanel, DialogTitle, DialogDescription } from '@headlessui/vue'
 
 const projects = [
@@ -317,14 +321,49 @@ function openModal(technologie: string) {
 }
 
 const actualURL = ref()
+const discoverprojects = ref()
 
 onMounted(() => {
-  actualURL.value = document.URL
+  gsap.registerPlugin(ScrollTrigger)
 
-  // gsap.timeline()
-  //   .to('.test', {
-  //     x: 1000
-  //   })
+  actualURL.value = document.URL
+  splitLettersInHTML(discoverprojects, 't-discoverprojects-letters text-light')
+
+  gsap.timeline()
+    .from('.t-discoverprojects', {
+      scrollTrigger: {
+        trigger: '.t-heading',
+        start: '-200 55%',
+        end: 'top 55%',
+        scrub: 1.5,
+      },
+      opacity: 0,
+      scale: 7,
+      xPercent: 300
+    })
+    .from('.t-discoverprojects-letters', {
+      scrollTrigger: {
+        trigger: '.t-heading',
+        start: '-200 55%',
+        end: 'top 55%',
+        scrub: 1.5,
+      },
+      filter: 'blur(10px)',
+      stagger: 0.1,
+    })
+    .from('.t-project', {
+      scrollTrigger: {
+        trigger: '.t-group-projects',
+        start: '-200 55%',
+        end: '100 55%',
+        scrub: 1.5,
+        markers: true
+      },
+      yPercent: 300,
+      opacity: 0,
+      filter: 'blur(10px)',
+      stagger: 0.2
+    })
 })
 
 </script>
@@ -332,7 +371,7 @@ onMounted(() => {
 <style scoped>
 .t-heading:after {
   content: '';
-  @apply bg-dark absolute top-0 left-0 rounded-b-3xl w-full h-[26%] -z-10
+  @apply bg-dark absolute top-0 left-0 rounded-b-3xl w-full h-[26%] -z-10 lg:h-[50%]
 }
 
 .filter-red {
