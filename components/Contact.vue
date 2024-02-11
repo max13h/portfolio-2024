@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <section>
     <div class="divider-block-md bg-light"></div>
     <div class="t-heading relative leading-none">
-      <h2 class="
+      <h2 ref="contactme" class="
+        t-contactme
         ms-4
         text-big2
         mix-blend-difference
@@ -22,6 +23,7 @@
             name="mdi:linkedin"
             size="16rem"
             class="
+              t-contacticons
               filter-light
               w-32 sm:w-36 md:w-40 lg:w-48 xl:w-56
               h-32 sm:h-36 md:h-4w-40 lg:h-48 xl:h-5w-56"
@@ -33,6 +35,7 @@
             name="fluent:mail-48-filled"
             size="16rem"
             class="
+              t-contacticons
               filter-light
               w-32 sm:w-36 md:w-40 lg:w-48 xl:w-56
               h-32 sm:h-36 md:h-4w-40 lg:h-48 xl:h-5w-56"
@@ -79,10 +82,12 @@
         </Dialog>
       </TransitionRoot>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { TransitionRoot, TransitionChild, Dialog, DialogPanel, DialogTitle, DialogDescription } from '@headlessui/vue'
 
 const modalOpened = ref(false)
@@ -104,6 +109,34 @@ const copyContent = async () => {
   }
 }
 
+const contactme = ref()
+
+onMounted(() => {
+  splitLettersInHTML(contactme, 't-contactme-letters text-light')
+  gsap.registerPlugin(ScrollTrigger)
+  gsap.timeline()
+  .from('.t-contactme-letters', {
+    scrollTrigger: {
+      trigger: '.t-contactme',
+      start: '-200 55%',
+      end: 'top 55%',
+      scrub: 1.5,
+    },
+    opacity: 0,
+    yPercent: 50,
+    stagger: 0.1
+  })
+  .from('.t-contacticons', {
+    scrollTrigger: {
+      trigger: '.t-contactme',
+      start: '-100 55%',
+      end: '100 55%',
+      scrub: 1.5,
+    },
+    opacity: 0,
+  })
+})
+
 </script>
 
 <style scoped>
@@ -117,6 +150,6 @@ const copyContent = async () => {
 
 .t-heading:after {
   content: '';
-  @apply bg-dark absolute bottom-0 left-0 rounded-t-3xl w-full h-[70%] -z-10
+  @apply bg-dark absolute bottom-0 left-0 rounded-t-3xl w-full h-[48%] -z-10
 }
 </style>

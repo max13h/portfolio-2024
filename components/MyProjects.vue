@@ -357,7 +357,6 @@ onMounted(() => {
         start: '-200 55%',
         end: '100 55%',
         scrub: 1.5,
-        markers: true
       },
       yPercent: 300,
       opacity: 0,
