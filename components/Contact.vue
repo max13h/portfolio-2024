@@ -2,7 +2,7 @@
   <section>
     <div class="divider-block-md bg-light"></div>
     <div class="t-heading relative leading-none">
-      <h2 ref="contactme" class="
+      <h2 id="contact" ref="contactme" class="
         t-contactme
         ms-4
         text-big2
