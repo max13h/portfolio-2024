@@ -162,7 +162,7 @@ onMounted(() => {
   content: '';
   filter: var(--blur-land1);
   opacity: var(--opacity-land1);
-  @apply w-full h-[50%] absolute top-1/2 left-0 -translate-y-1/2 bg-dark rounded-3xl xl:rounded-[3rem] -z-10
+  @apply w-2/3 h-[50%] absolute top-1/2 right-0 -translate-y-1/2 bg-dark rounded-3xl xl:rounded-[3rem] -z-10
 }
 .t-group-imajuniorwebdeveloper:after {
   content: '';

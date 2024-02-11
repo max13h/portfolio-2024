@@ -60,13 +60,13 @@
                             'tech-icon-rails-active': technologie.name === 'Ruby on Rails',
                           }"
                         />
-                        <NuxtLink :to="technologie.link" rel="external noopener" target="_blank" class="flex justify-center items-center font-bold">
+                        <NuxtLink :to="technologie.link" rel="external noopener" target="_blank" class="flex justify-center items-center font-bold text-big6">
                           {{ technologie.name }}
                           <Icon name="fluent:open-12-regular" class="ms-1"/>
                         </NuxtLink>
                         <p class="font-thin text-sm text-dark">{{ technologie.title }}</p>
                         <DialogDescription>
-                          <q class="italic opacity-50 max-w-64 inline-block mt-4">{{ technologie.quote }}</q>
+                          <q class="italic opacity-50 max-w-64 inline-block mt-4 text-big6">{{ technologie.quote }}</q>
                         </DialogDescription>
                         <div class="mt-4">
                           <button
@@ -150,13 +150,13 @@
                             'tech-icon-rails-active': technologie.name === 'Ruby on Rails',
                           }"
                         />
-                        <NuxtLink :to="technologie.link" rel="external noopener" target="_blank" class="flex justify-center items-center font-bold">
+                        <NuxtLink :to="technologie.link" rel="external noopener" target="_blank" class="flex justify-center items-center font-bold text-big6">
                           {{ technologie.name }}
                           <Icon name="fluent:open-12-regular" class="ms-1"/>
                         </NuxtLink>
                         <p class="font-thin text-sm text-dark">{{ technologie.title }}</p>
                         <DialogDescription>
-                          <q class="italic opacity-50 max-w-64 inline-block mt-4">{{ technologie.quote }}</q>
+                          <q class="italic opacity-50 max-w-64 inline-block mt-4 text-big6">{{ technologie.quote }}</q>
                         </DialogDescription>
                         <div class="mt-4">
                           <button

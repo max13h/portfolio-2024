@@ -105,7 +105,7 @@
                         </NuxtLink>
                       </div>
 
-                      <NuxtLink :to="project.link" target="_blank" class="bg-gray-300 text-dark px-4 py-2 rounded-3xl w-fit mt-4">
+                      <NuxtLink :to="project.link" target="_blank" class="bg-gray-300 text-dark md:text-xl px-4 py-2 rounded-3xl w-fit mt-4">
                         {{ project.textLink }}
                       </NuxtLink>
                     </div>
@@ -336,10 +336,11 @@ onMounted(() => {
         start: '-200 55%',
         end: 'top 55%',
         scrub: 1.5,
+        markers: true
       },
       opacity: 0,
-      scale: 7,
-      xPercent: 300
+      scale: 3,
+      xPercent: 100
     })
     .from('.t-discoverprojects-letters', {
       scrollTrigger: {
