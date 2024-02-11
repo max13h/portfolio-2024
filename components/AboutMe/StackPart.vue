@@ -313,9 +313,10 @@ onMounted(() => {
     .from('.t-and', {
       scrollTrigger: {
         trigger: '.t-and',
-        start: '-200 55%',
-        end: 'top 55%',
+        start: '-300 55%',
+        end: '-100 55%',
         scrub: 1.5,
+        markers: true
       },
       filter: 'blur(10px)',
       opacity: 0,
