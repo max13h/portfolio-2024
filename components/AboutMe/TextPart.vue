@@ -26,9 +26,9 @@
     <div class="divider-block-lg"></div>
 
     <div class="t-group-proficientin relative">
-      <p class="t-proficientin text-big4 text-nowrap text-center mix-blend-difference text-light">Proficient in...</p>
+      <p class="t-proficientin text-big4 text-center mix-blend-difference text-light">Proficient in...</p>
     </div>
-    <div class="divider-block-sm bg-dark"></div>
+    <div class="divider-block-lg bg-dark"></div>
   </div>
 </template>
 
@@ -47,7 +47,6 @@ onMounted(() => {
     scrollTrigger: {
       trigger: '.t-group-mynameis',
       start: 'top 80%',
-      end: 'bottom 80%',
     },
     autoRemoveChildren: true
   })
@@ -77,7 +76,6 @@ onMounted(() => {
     scrollTrigger: {
       trigger: '.t-group-imajuniorwebdeveloper',
       start: 'top 80%',
-      end: 'bottom 80%',
     },
     autoRemoveChildren: true
   })
@@ -117,8 +115,6 @@ onMounted(() => {
     scrollTrigger: {
       trigger: '.t-group-proficientin',
       start: 'top 80%',
-      end: 'bottom 80%',
-      markers: true,
     },
     duration: 2,
     ease: "power4.out",
