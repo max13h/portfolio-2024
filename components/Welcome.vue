@@ -55,7 +55,7 @@ onMounted(() => {
   .to('.t-scrolldown', {
     yPercent: -500,
     opacity: 0
-  })
+  }, '<')
 
   gsap.timeline({ autoRemoveChildren: true, delay: 2.5 })
     .from('.t-helloimmax13h-letters', {
