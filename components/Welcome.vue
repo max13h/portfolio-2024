@@ -1,5 +1,5 @@
 <template>
-  <header id="welcome" class="t-welcome relative h-dvh flex justify-center items-center">
+  <header id="welcome" class="t-welcome relative h-screen flex justify-center items-center">
     <h1 class="text-big1 flex flex-col items-center">
       <span :ref="letters[0]">Hello, I'm </span>
       <span :ref="letters[1]" class="t-max13h relative w-full text-center">max13h</span>
@@ -107,9 +107,9 @@ onMounted(() => {
       opacity: 0
     }, '<')
     .from('nav', {
-        duration: 2,
-        opacity: 0,
-      }, '<')
+      duration: 2,
+      opacity: 0,
+    }, '<')
 })
 </script>
 

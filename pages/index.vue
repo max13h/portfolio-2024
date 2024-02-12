@@ -1,5 +1,5 @@
 <template>
-  <main class="relative overflow-x-hidden">
+  <main class="relative overflow-x-hidden" :class="{ 'overflow-hidden': !gsapStore.isWelcomed }">
     <Entrance v-if="gsapStore.isEntrance" />
     <Navbar />
     <Welcome />

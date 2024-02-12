@@ -1,5 +1,5 @@
 <template>
-  <div class="t-mystack bg-dark w-full h-full flex flex-col items-center md:flex-row md:justify-evenly">
+  <section class="t-mystack bg-dark w-full h-full flex flex-col items-center md:flex-row md:justify-evenly">
     <div class="t-group-backend flex flex-col items-center mt-4">
       <div class="t-backend-bg">
         <p class="t-backend text-light text-big4 font-semibold text-center mix-blend-difference leading-6">
@@ -174,11 +174,10 @@
               </Dialog>
             </TransitionRoot>
           </div>
-
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -273,90 +272,70 @@ function openModal(technologie: string) {
 onMounted(() => {
   gsap.registerPlugin(ScrollTrigger)
 
-  gsap.timeline()
-    .from('.t-backend', {
-      scrollTrigger: {
-        trigger: '.t-group-backend',
-        start: '-200 55%',
-        end: 'top 55%',
-        scrub: 1.5,
-      },
-      filter: 'blur(10px)',
-      opacity: 0,
-      scale: 0,
-      xPercent: -300
-    })
-    .from('html', {
-      scrollTrigger: {
-        trigger: '.t-group-backend-technologies',
-        start: '-200 55%',
-        end: 'top 55%',
-        scrub: 1.5,
-      },
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: '.t-group-backend',
+      start: '-200 55%',
+      end: 'top 55%',
+      markers: true,
+    },
+  })
+  .from('.t-backend', {
+    filter: 'blur(10px)',
+    opacity: 0,
+    scale: 0,
+    xPercent: -300
+  })
+  .from('html', {
+    '--blur-land4': 'blur(10px)',
+    '--opacity-land4': 0,
+  })
+  .from('.t-group-backend-technologies', {
+    filter: 'blur(10px)',
+    opacity: 0,
+    borderBottomLeftRadius: 100,
+    borderBottomRightRadius: 100,
+    height: '0%',
+  })
 
-      '--blur-land4': 'blur(10px)',
-      '--opacity-land4': 0,
-    })
-    .from('.t-group-backend-technologies', {
-      scrollTrigger: {
-        trigger: '.t-group-backend-technologies',
-        start: '-200 55%',
-        end: 'top 55%',
-        scrub: 1.5,
-      },
-      filter: 'blur(10px)',
-      opacity: 0,
-      borderBottomLeftRadius: 100,
-      borderBottomRightRadius: 100,
-      height: '0%',
-    })
-    .from('.t-and', {
-      scrollTrigger: {
-        trigger: '.t-and',
-        start: '-300 55%',
-        end: '-100 55%',
-        scrub: 1.5,
-      },
-      filter: 'blur(10px)',
-      opacity: 0,
-      scale: 0,
-    })
-    .from('.t-frontend', {
-      scrollTrigger: {
-        trigger: '.t-group-frontend',
-        start: '-200 55%',
-        end: 'top 55%',
-        scrub: 1.5,
-      },
-      filter: 'blur(10px)',
-      opacity: 0,
-      scale: 0,
-      xPercent: 300
-    })
-    .from('html', {
-      scrollTrigger: {
-        trigger: '.t-group-frontend-technologies',
-        start: '-200 55%',
-        end: 'top 55%',
-        scrub: 1.5,
-      },
+  gsap.from('.t-and', {
+    scrollTrigger: {
+      trigger: '.t-and',
+      start: '-300 55%',
+      end: '-100 55%',
+      scrub: 1.5,
+    },
+    filter: 'blur(10px)',
+    opacity: 0,
+    scale: 0,
+  })
 
-      '--blur-land5': 'blur(10px)',
-      '--opacity-land5': 0,
-    })
-    .from('.t-group-frontend-technologies', {
-      scrollTrigger: {
-        trigger: '.t-group-frontend-technologies',
-        start: '-200 55%',
-        end: 'top 55%',
-        scrub: 1.5,
-      },
-      filter: 'blur(10px)',
-      opacity: 0,
-      borderBottomLeftRadius: 100,
-      borderBottomRightRadius: 100,
-      height: '0%',
-    })
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: '.t-group-frontend',
+      start: '-200 55%',
+      end: 'top 55%',
+      scrub: 1.5,
+    },
+  })
+  .from('.t-frontend', {
+
+    filter: 'blur(10px)',
+    opacity: 0,
+    scale: 0,
+    xPercent: 300
+  })
+  .from('html', {
+    '--blur-land5': 'blur(10px)',
+    '--opacity-land5': 0,
+  })
+  .from('.t-group-frontend-technologies', {
+    filter: 'blur(10px)',
+    opacity: 0,
+    borderBottomLeftRadius: 100,
+    borderBottomRightRadius: 100,
+    height: '0%',
+  })
 })
 </script>
 
