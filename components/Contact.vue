@@ -121,6 +121,7 @@ onMounted(() => {
       trigger: '.t-contactme',
       start: 'top 80%',
     },
+    autoRemoveChildren: true
   })
   .from('.t-contactme-letters', {
     duration: 2,

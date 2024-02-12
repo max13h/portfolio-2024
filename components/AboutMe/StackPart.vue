@@ -280,6 +280,7 @@ onMounted(() => {
       trigger: '.t-group-backend',
       start: 'top 80%',
     },
+    autoRemoveChildren: true
   })
   .from('.t-backend-title', {
     duration: 2,
@@ -320,6 +321,7 @@ onMounted(() => {
       trigger: '.t-group-frontend',
       start: 'top 80%',
     },
+    autoRemoveChildren: true
   })
   .from('.t-frontend-title', {
     duration: 2,

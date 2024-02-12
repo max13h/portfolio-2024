@@ -34,7 +34,7 @@ onMounted(() => {
       start: 'bottom 90%',
       end: 'bottom 90%',
       toggleActions: 'play none reverse none',
-    },
+    }
   })
   .to('.t-helloimmax13h-letters', {
     duration: 1,
@@ -62,59 +62,62 @@ onMounted(() => {
   }, 0)
 
 
-  gsap.timeline({ autoRemoveChildren: true, delay: 2.5 })
-    .from('.t-helloimmax13h-letters', {
-      xPercent: 5000,
-      duration: 1,
-      stagger: 0.05,
-      ease: CustomEase.create("custom", "M0,0 C0.169,0.85 0.054,1.025 1,1 "),
-    })
-    .to('.t-helloimmax13h-letters', {
-      rotate: () => `-${Math.floor(Math.random() * 20  + 10)}`,
-      duration: 0.1,
-      delay: 0.3,
-      stagger: 0.06,
-    }, '<')
-    .to('.t-helloimmax13h-letters', {
-      rotate: () => `${Math.floor(Math.random() * 16 - 8)}`,
-      duration: 0.5,
-      delay: 0.6,
-      stagger: 0.06,
-    }, '<')
-    .to('.t-max13h', {
-      overflow: 'hidden'
-    })
-    .to('html', {
-      '--display-max13h': 'block'
-    }, '<')
-    .to('html', {
-      duration: 0.4,
-      '--bottom-max13h': -50
-    }, '<')
-    .to('.t-max13h', {
-      duration: 0.1,
-      fontFamily: 'farnhamtext-regularlfregular',
-    })
-    .to('html', {
-      duration: 0.4,
-      '--bottom-max13h': 100,
-      onComplete: () => { gsapStore.isWelcomed = true }
-    }, '<')
-    .to('html', {
-      '--display-max13h': 'none',
-      overflow: 'visible'
-    })
-    .to('.t-max13h', {
-      overflow: 'visible'
-    }, '<')
-    .from('.t-scrolldown', {
-      duration: 1,
-      opacity: 0
-    }, '<')
-    .from('nav', {
-      duration: 2,
-      opacity: 0,
-    }, '<')
+  gsap.timeline({
+    autoRemoveChildren: true,
+    delay: 2.5
+  })
+  .from('.t-helloimmax13h-letters', {
+    xPercent: 5000,
+    duration: 1,
+    stagger: 0.05,
+    ease: CustomEase.create("custom", "M0,0 C0.169,0.85 0.054,1.025 1,1 "),
+  })
+  .to('.t-helloimmax13h-letters', {
+    rotate: () => `-${Math.floor(Math.random() * 20  + 10)}`,
+    duration: 0.1,
+    delay: 0.3,
+    stagger: 0.06,
+  }, '<')
+  .to('.t-helloimmax13h-letters', {
+    rotate: () => `${Math.floor(Math.random() * 16 - 8)}`,
+    duration: 0.5,
+    delay: 0.6,
+    stagger: 0.06,
+  }, '<')
+  .to('.t-max13h', {
+    overflow: 'hidden'
+  })
+  .to('html', {
+    '--display-max13h': 'block'
+  }, '<')
+  .to('html', {
+    duration: 0.4,
+    '--bottom-max13h': -50
+  }, '<')
+  .to('.t-max13h', {
+    duration: 0.1,
+    fontFamily: 'farnhamtext-regularlfregular',
+  })
+  .to('html', {
+    duration: 0.4,
+    '--bottom-max13h': 100,
+    onComplete: () => { gsapStore.isWelcomed = true }
+  }, '<')
+  .to('html', {
+    '--display-max13h': 'none',
+    overflow: 'visible'
+  })
+  .to('.t-max13h', {
+    overflow: 'visible'
+  }, '<')
+  .from('.t-scrolldown', {
+    duration: 1,
+    opacity: 0
+  }, '<')
+  .from('nav', {
+    duration: 2,
+    opacity: 0,
+  }, '<')
 })
 </script>
 

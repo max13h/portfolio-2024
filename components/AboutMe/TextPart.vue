@@ -55,16 +55,17 @@ onMounted(() => {
     ease: "power4.out",
     opacity: 0,
     filter: "blur(10px)",
-    xPercent: 50,
-    yPercent: -300,
+    xPercent: -100,
+    yPercent: -200,
   })
   .from('.t-imageofme', {
-    duration: 2,
-    ease: "power4.out",
+    duration: 3,
+    ease: "power3.out",
     opacity: 0,
     filter: "blur(10px)",
-    yPercent: -300,
-  }, '<+=0.5')
+    yPercent: -200,
+    xPercent: 200,
+  }, '<')
   .from('html', {
     duration: 5,
     ease: "power4.out",

@@ -299,7 +299,8 @@ onMounted(() => {
     scrollTrigger: {
       trigger: '.t-group-dicoverprojects',
       start: 'top 80%',
-    }
+    },
+    autoRemoveChildren: true
   })
   .from('.t-discoverprojects', {
     duration: 2,
@@ -319,6 +320,7 @@ onMounted(() => {
       trigger: '.t-group-projects',
       start: 'top 80%',
     },
+    autoRemoveChildren: true
   })
   .from('.t-project', {
     yPercent: 200,

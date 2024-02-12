@@ -20,7 +20,10 @@ import { gsap } from "gsap"
 const gsapStore = useGsapStore()
 
 onMounted(() => {
-  gsap.timeline({ onComplete: () => { gsapStore.isEntrance = false }, autoRemoveChildren: true})
+  gsap.timeline({
+    onComplete: () => { gsapStore.isEntrance = false },
+    autoRemoveChildren: true
+  })
   .from('.t-portfoliomax13h', {
     yPercent: 100,
     duration: 0.5,
