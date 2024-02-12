@@ -277,7 +277,6 @@ onMounted(() => {
       trigger: '.t-group-backend',
       start: '-200 55%',
       end: 'top 55%',
-      markers: true,
     },
   })
   .from('.t-backend', {

@@ -34,7 +34,6 @@ onMounted(() => {
       start: 'bottom 90%',
       end: 'bottom 90%',
       toggleActions: 'play none reverse none',
-      markers: true
     },
   })
   .to('.t-helloimmax13h-letters', {

@@ -46,7 +46,7 @@ onMounted(() => {
   gsap.timeline({
     scrollTrigger: {
       trigger: '.t-group-mynameis',
-      start: 'center bottom',
+      start: 'center 80%',
     },
     autoRemoveChildren: true
   })
@@ -113,7 +113,7 @@ onMounted(() => {
   gsap.from('.t-proficientin', {
     scrollTrigger: {
       trigger: '.t-group-proficientin',
-      start: 'center bottom',
+      start: 'center 80%',
     },
     duration: 2,
     ease: "power4.out",
