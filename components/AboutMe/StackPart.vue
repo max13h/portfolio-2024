@@ -23,7 +23,9 @@
               'tech-icon-rails': technologie.name === 'Ruby on Rails',
               'tech-icon-rails-active': modalOpened === 'Ruby on Rails' && technologie.name === 'Ruby on Rails',
             }"
+            tabindex="0"
             @click="openModal(technologie.name)"
+            @keyup.enter="openModal(technologie.name)"
           />
 
           <TransitionRoot :show="modalOpened === technologie.name">
@@ -112,7 +114,9 @@
             :class="{
               'tech-icon-active': modalOpened === technologie.name,
             }"
+            tabindex="0"
             @click="openModal(technologie.name)"
+            @keyup.enter="openModal(technologie.name)"
           />
 
           <TransitionRoot :show="modalOpened === technologie.name">
