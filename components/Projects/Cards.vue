@@ -3,8 +3,8 @@
     v-for="(project, projectIndex) in projects"
     :key="projectIndex"
     class="t-project flex-shrink-0 relative overflow-hidden rounded-2xl group
-      w-[90vw]
-      h-[90vw]
+      w-[80vw]
+      h-[80vw]
       sm:w-[50vh]
       sm:h-[50vh]
       me-8
@@ -50,38 +50,48 @@
                 <div class="w-full flex justify-end">
                   <Icon name="fluent:dismiss-12-regular" size="1rem" class="text-light mt-4 me-4" @click="closeModal" tabindex="2" />
                 </div>
-                <div class="p-8 flex flex-col">
-                  <DialogTitle as="h4" class="text-light text-big3 font-semibold leading-none font-serif">
+                <div class="p-8 sm:p-12 flex flex-col">
+                  <DialogTitle as="h4" class="text-light text-big3 font-semibold leading-none">
                     {{ project.name }}
                   </DialogTitle>
                   <p class="text-light italic opacity-75">{{ project.date }}</p>
 
-                  <div class="flex justify-start items-center my-2">
+                  <div class="flex justify-start items-center my-4">
                     <NuxtLink v-for="(techno, technoIndex) in project.stack" :key="technoIndex" :to="techno.link" target="_blank" :tabindex="3 + technoIndex" class="me-2 last:me-0">
                       <Icon v-if="techno.isIcon" :name="techno.icon" size="1.5rem" :color="techno.name === 'Ruby on Rails' ? 'red' : ''" :class="techno.class" />
                       <NuxtImg v-else :src="techno.imageLink" :alt="`Icon of ${techno.name}`" :class="techno.class" />
                     </NuxtLink>
                   </div>
 
-                  <DialogDescription class="text-light my-4 lg:text-xl whitespace-pre-line">{{ project.description }}</DialogDescription>
+                  <DialogDescription class="text-light my-8 lg:text-xl whitespace-pre-line ">{{ project.description }}</DialogDescription>
 
-                  <NuxtLink :to="project.link" target="_blank" tabindex="1" class="btn-light">
+                  <NuxtLink :to="project.link" target="_blank" tabindex="1" class="btn-light self-end my-8">
                     {{ project.textLink }}
                   </NuxtLink>
                 </div>
-                <p v-if="project.images.length > 1" class="text-light w-full text-center lg:hidden">
-                  Scroll
-                  <Icon name="fluent:arrow-right-12-regular" class="text-light" />
-                </p>
-                <div ref="scroll" class="flex p-4" :class="{'overflow-x-scroll' : project.images.length > 1 }">
-                  <NuxtLink
-                    v-for="(image, imgIndex) in project.images" :key="imgIndex"
-                    :to="image[0] == '/' ? actualURL + image : image"
-                    target="_blank"
-                    class="min-w-24 sm:min-w-32 mx-4 flex justify-center items-center"
-                  >
-                    <NuxtImg :src="image" class="mx-4 first:mx-0 rounded-3xl object-cover w-32 sm:w-64 md:w-72 lg:w-96 xl:w-[26rem]" />
-                  </NuxtLink>
+                <div class="flex-shrink-0">
+                  <p v-if="project.images.length > 1" class="text-light w-full text-center lg:hidden">
+                    Scroll
+                    <Icon name="fluent:arrow-right-12-regular" class="text-light" />
+                  </p>
+                  <div class="flex p-4" :class="{'overflow-x-scroll' : project.images.length > 1 }">
+                    <NuxtLink
+                      v-for="(image, imgIndex) in project.images" :key="imgIndex"
+                      :to="image[0] == '/' ? actualURL + image : image"
+                      target="_blank"
+                      class="flex-shrink-0 rounded-2xl overflow-hidden relative
+                        me-8
+                        last:me-0
+                        w-[65vw]
+                        h-[65vw]
+                        sm:w-[50vh]
+                        sm:h-[50vh]
+                        cursor-pointer
+                      "
+                    >
+                      <NuxtImg :src="image" class="absolute inset-0 w-full h-full object-cover" />
+                    </NuxtLink>
+                  </div>
                 </div>
               </DialogPanel>
             </TransitionChild>
@@ -144,7 +154,7 @@ const projects = [
       },
     ],
     link: 'https://github.com/max13h/',
-    textLink: 'Not the project, but you can check my github instead',
+    textLink: 'My github',
     images: [
       'secretproject/logo_secretproject.png',
       'secretproject/activity.png',
