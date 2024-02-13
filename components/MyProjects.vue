@@ -310,7 +310,10 @@ onMounted(() => {
     ease: "power4.out",
     opacity: 0,
     scale: 3,
-    xPercent: 100
+    xPercent: 100,
+    onComplete: () => {
+      discoverprojects.map((el) => el.value.classList.add('no-translate3D'))
+    }
   }, 0)
   .from('.t-discoverprojects-letters', {
     duration: 1,

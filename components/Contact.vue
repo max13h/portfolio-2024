@@ -128,7 +128,10 @@ onMounted(() => {
     ease: "power4.out",
     opacity: 0,
     yPercent: 50,
-    stagger: 0.1
+    stagger: 0.1,
+    onComplete: () => {
+      contactme.value.classList.add('no-translate3D')
+    }
   })
   .from('.t-contact-icons', {
     duration: 2,
