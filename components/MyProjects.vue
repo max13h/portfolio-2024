@@ -66,7 +66,7 @@
                       <DialogTitle as="h4" class="text-light text-big3 font-semibold leading-none">{{ project.name }}</DialogTitle>
                       <DialogDescription class="text-light my-4 lg:text-xl">{{ project.description }}</DialogDescription>
 
-                      <div class="flex justify-start items-center overflow-y-scroll my-2">
+                      <div class="flex justify-start items-center my-2">
                         <NuxtLink v-for="(techno, technoIndex) in project.stack" :key="technoIndex" :to="techno.link" target="_blank" :tabindex="3 + technoIndex" class="me-2 last:me-0">
                           <Icon v-if="techno.isIcon" :name="techno.icon" size="1.5rem" :class="techno.class" />
                           <NuxtImg v-else :src="techno.imageLink" :alt="`Icon of ${techno.name}`" :class="techno.class" />
@@ -280,12 +280,16 @@ const projects = [
   }
 ]
 
+const lenisStore = useLenisStore()
+
 const modalOpened = ref('')
 function closeModal() {
   modalOpened.value = ''
+  useLenis()
 }
 function openModal(technologie: string) {
   modalOpened.value = technologie
+  lenisStore.lenis.destroy()
 }
 
 const actualURL = ref()

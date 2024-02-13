@@ -2,17 +2,18 @@ import Lenis from '@studio-freight/lenis'
 
 export const useLenis = () => {
   const lenis = new Lenis()
+  const lenisStore = useLenisStore()
+  const gsapStore = useGsapStore()
 
-  // lenis.on('scroll', (e) => {
-  //   console.log(e)
-  // })
-
-  function raf(time) {
+  function raf(time: any) {
     lenis.raf(time)
     requestAnimationFrame(raf)
   }
-
   requestAnimationFrame(raf)
 
-  return lenis
+  if (!gsapStore.isWelcomed) {
+    lenis.stop()
+  }
+
+  lenisStore.lenis = lenis
 }

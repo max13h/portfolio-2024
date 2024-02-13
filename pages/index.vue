@@ -15,13 +15,9 @@
 
 <script setup lang="ts">
 const gsapStore = useGsapStore()
-const lenisStore = useLenisStore()
 
 onMounted(() => {
-  const lenis = useLenis()
-  lenis.stop()
-
-  lenisStore.lenis = lenis
+  useLenis()
 })
 </script>
 
