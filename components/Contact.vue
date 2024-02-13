@@ -1,18 +1,17 @@
 <template>
   <section>
     <div class="divider-block-md bg-light"></div>
-    <div class="t-contact-heading relative leading-none">
-      <h2 id="contact" ref="contactme" class="
+
+    <div class="t-contact-heading relative">
+      <h2 id="contact"  class="
         t-contactme
         ms-4
         text-big2
         mix-blend-difference
-        text-light
-        font-medium
+        leading-none
       ">
-        Contact
-        <br>
-        me
+        <span :ref="contactme[0]" class="text-light ">Let's get in </span><br class="lg:hidden">
+        <span :ref="contactme[1]" class="text-light font-serif block">touch</span>
       </h2>
     </div>
 
@@ -109,10 +108,10 @@ const copyContent = async () => {
   }
 }
 
-const contactme = ref()
+const contactme = [ref(), ref()]
 
 onMounted(() => {
-  splitLettersInHTML(contactme, 't-contactme-letters text-light')
+  contactme.map((el) => splitLettersInHTML(el, 't-contactme-letters text-light'))
 
   gsap.registerPlugin(ScrollTrigger)
 
@@ -130,7 +129,7 @@ onMounted(() => {
     yPercent: 50,
     stagger: 0.1,
     onComplete: () => {
-      contactme.value.classList.add('no-translate3D')
+      contactme.map((el) => el.value.classList.add('no-translate3D'))
     }
   })
   .from('.t-contact-icons', {
@@ -146,6 +145,6 @@ onMounted(() => {
 <style scoped>
 .t-contact-heading:after {
   content: '';
-  @apply bg-dark absolute bottom-0 left-0 rounded-t-3xl w-full h-[48%] -z-10
+  @apply bg-dark absolute bottom-0 left-0 rounded-t-3xl w-full h-[20%] -z-10
 }
 </style>

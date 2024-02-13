@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="divider-block-lg bg-dark"></div>
+    <div class="divider-block-screen bg-dark"></div>
 
     <div class="t-group-dicoverprojects relative leading-none">
       <h2 ref="discoverprojectsheading" class="t-discoverprojects ms-4 mix-blend-difference text-light inline-block">
@@ -14,7 +14,6 @@
     <div class="t-group-projects flex flex-col items-center sm:items-start sm:flex-row sm:flex-nowrap sm:overflow-x-scroll overflow-y-auto p-4">
       <ProjectsCards />
     </div>
-
   </div>
 </template>
 
@@ -74,6 +73,6 @@ onMounted(() => {
 <style scoped>
 .t-group-dicoverprojects:after {
   content: '';
-  @apply bg-dark absolute top-0 left-0 rounded-b-3xl w-full h-[26%] -z-10 lg:h-[30%]
+  @apply bg-dark absolute top-0 left-0 rounded-b-3xl w-full h-[26%] -z-10 lg:h-[80%]
 }
 </style>

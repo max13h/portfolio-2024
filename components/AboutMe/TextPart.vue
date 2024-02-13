@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="t-group-mynameis text-end relative">
-      <p ref="mynameis" class="t-mynameis mix-blend-difference text-light inline-block text-big3 me-4">
+      <p ref="mynameis" class="t-mynameis mix-blend-difference text-light inline-block text-big3 me-4 lg:me-16">
         My name is <br/>
         <span class="font-bold tracking-widst text-light" style="font-family: 'farnhamtext-regularlfregular';">Maxime</span>
       </p>
@@ -17,10 +17,10 @@
     <div class="divider-block-screen"></div>
 
     <div class="t-group-imajuniorwebdeveloper relative flex flex-col">
-      <p ref="imajunior" class="t-imajunior mix-blend-difference text-light text-big4 inline-block ms-4">
+      <p ref="imajunior" class="t-imajunior mix-blend-difference text-light text-big4 inline-block ms-4 lg:ms-16">
         I'm a junior
       </p>
-      <p ref="webdeveloperLetters" class="t-webdeveloper mix-blend-difference text-light font-bold text-big3 inline-block ms-4 font-serif">Web Developer</p>
+      <p ref="webdeveloperLetters" class="t-webdeveloper mix-blend-difference text-light font-bold text-big3 inline-block ms-4 lg:ms-16">Web Developer</p>
     </div>
 
     <div class="divider-block-screen"></div>
