@@ -40,6 +40,5 @@ export default defineNuxtConfig({
   },
   buildModules: [
     'floating-vue/nuxt',
-  ],
-  ssr: false
+  ]
 })
