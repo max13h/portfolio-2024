@@ -46,7 +46,7 @@
               leave-from="opacity-100 scale-100"
               leave-to="opacity-0 scale-95"
             >
-              <DialogPanel class="bg-light rounded-2xl h-[90vh] w-[90vw] shadow-2xl shadow-dark overflow-y-scroll flex flex-col">
+              <DialogPanel class="bg-light rounded-2xl h-[90vh] w-[90vw] max-w-screen-2xl shadow-2xl shadow-dark overflow-y-scroll flex flex-col">
                 <div class="w-full flex justify-end pt-8 pr-8 bg-dark">
                   <Icon name="fluent:dismiss-12-regular" size="1rem" class="text-light cursor-pointer" @click="closeModal" tabindex="2" />
                 </div>
