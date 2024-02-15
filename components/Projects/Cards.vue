@@ -30,7 +30,7 @@
           leave-from="opacity-100"
           leave-to="opacity-0"
         >
-          <div class="fixed inset-0 bg-light/50" />
+          <div class="fixed inset-0 bg-light/70" />
         </TransitionChild>
 
         <div class="fixed inset-0 overflow-y-auto">
@@ -46,11 +46,11 @@
               leave-from="opacity-100 scale-100"
               leave-to="opacity-0 scale-95"
             >
-              <DialogPanel class="bg-dark rounded-2xl h-[90vh] w-[90vw] shadow-2xl shadow-dark/50 overflow-y-scroll flex flex-col">
-                <div class="w-full flex justify-end pt-8 pr-8">
+              <DialogPanel class="bg-light rounded-2xl h-[90vh] w-[90vw] shadow-2xl shadow-dark overflow-y-scroll flex flex-col">
+                <div class="w-full flex justify-end pt-8 pr-8 bg-dark">
                   <Icon name="fluent:dismiss-12-regular" size="1rem" class="text-light cursor-pointer" @click="closeModal" tabindex="2" />
                 </div>
-                <div class="pl-8 pr-8 sm:pl-12   sm:pr-12 flex flex-col">
+                <div class="flex-grow pl-8 pr-8 sm:pl-12 sm:pr-12 flex flex-col bg-dark rounded-b-3xl">
                   <DialogTitle as="h4" class="text-light text-big3 font-semibold leading-none">
                     {{ project.name }}
                   </DialogTitle>
@@ -70,12 +70,12 @@
                   </NuxtLink>
                 </div>
                 <div class="flex-shrink-0">
-                  <div class="flex p-8" :class="{'overflow-x-scroll' : project.images.length > 1 }">
+                  <div class="flex p-8 bg-light" :class="{'overflow-x-scroll' : project.images.length > 1 }">
                     <NuxtLink
                       v-for="(image, imgIndex) in project.images" :key="imgIndex"
                       :to="image[0] == '/' ? actualURL + image : image"
                       target="_blank"
-                      class="flex-shrink-0 rounded-2xl overflow-hidden relative
+                      class="flex-shrink-0 rounded-3xl overflow-hidden relative shadow-xl border-2 border-dark
                         me-8
                         last:me-0
                         w-[65vw]
