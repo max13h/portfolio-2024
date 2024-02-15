@@ -53,7 +53,7 @@
             leave-from="opacity-100"
             leave-to="opacity-0"
           >
-            <div class="fixed inset-0 bg-black/25" />
+            <div class="fixed inset-0 bg-black/50" />
           </TransitionChild>
 
           <div class="fixed inset-0 overflow-y-auto">
@@ -69,11 +69,19 @@
                 leave-from="opacity-100 scale-100"
                 leave-to="opacity-0 scale-95"
               >
-                <DialogPanel class="bg-dark p-8 rounded-2xl">
-                  <p class="text-light">
-                    <Icon :name="isMailCopied ? 'fluent:checkmark-circle-12-regular' : 'fluent:dismiss-circle-12-regular'" class="text-light" />
-                    {{ clipboardMessage }}
-                  </p>
+                <DialogPanel class="bg-light p-8 rounded-2xl shadow-2xl shadow-light/50">
+                  <div v-if="isMailCopied" class="text-dark">
+                    <Icon name="fluent:checkmark-circle-12-regular" class="text-dark" size="2rem" />
+                    Email copied to clipboard !
+                  </div>
+                  <div v-else class="text-dark flex flex-col items-center">
+                    <p class="flex items-center mb-4">
+                      <Icon name="fluent:dismiss-circle-12-regular" class="text-dark me-2" size="1.5rem" />
+                      An error occures.
+                    </p>
+                    <p>Please copy my email:</p>
+                    <p class="font-bold mt-2">contact@max13h.fr</p>
+                  </div>
                 </DialogPanel>
               </TransitionChild>
             </div>
@@ -90,7 +98,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { TransitionRoot, TransitionChild, Dialog, DialogPanel, DialogTitle, DialogDescription } from '@headlessui/vue'
 
 const modalOpened = ref(false)
-const clipboardMessage = ref('Email copied to clipboard')
 const isMailCopied = ref(false)
 
 const copyContent = async () => {
@@ -98,12 +105,10 @@ const copyContent = async () => {
 
   try {
     await navigator.clipboard.writeText('contact@max13h.fr');
-    clipboardMessage.value = 'Email copied to clipboard'
     isMailCopied.value = true
 
   } catch (err) {
     console.log(err);
-    clipboardMessage.value = 'Failed to copy the email. My address is: contact@max13h.fr'
     isMailCopied.value = false
   }
 }
