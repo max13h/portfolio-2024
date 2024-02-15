@@ -48,7 +48,7 @@
             >
               <DialogPanel class="bg-dark rounded-2xl h-[90vh] w-[90vw] shadow-2xl shadow-dark/50 overflow-y-scroll flex flex-col">
                 <div class="w-full flex justify-end pt-8 pr-8">
-                  <Icon name="fluent:dismiss-12-regular" size="1rem" class="text-light" @click="closeModal" tabindex="2" />
+                  <Icon name="fluent:dismiss-12-regular" size="1rem" class="text-light cursor-pointer" @click="closeModal" tabindex="2" />
                 </div>
                 <div class="pl-8 pr-8 sm:pl-12   sm:pr-12 flex flex-col">
                   <DialogTitle as="h4" class="text-light text-big3 font-semibold leading-none">
@@ -161,7 +161,7 @@ const projects = [
     name: 'The Favorite',
     date: 'September 2023 - October 2023',
     mainImage: 'https://raw.githubusercontent.com/max13h/the_favorite/8ad4723678a48ee37cd25e482f971d550fd8986e/app/assets/images/crown.svg',
-    description: "The Favorite offers a humorous take on the burden of parenthood. Parents work as a real team, while having fun competing against each other. \nThis project was a great first project to work on. I took the lead of our team of three over a one-month period, dedicating a significant amount of time to its success. We brought some excellent ideas and are really proud of the accomplished work. \nParticipating in this project during my bootcamp provided the opportunity to work in a full team project early in my career, contributing to a better understanding of the collaborative approach required for development projects.",
+    description: "The Favorite offers a humorous take on the burden of parenthood. Parents work as a real team, while having fun competing against each other. \nIt was a great first project to work on. I took the lead of our team of three over a one-month period, dedicating a significant amount of time to its success. We brought some excellent ideas and are really proud of the accomplished work. \nParticipating in this project during my bootcamp provided the opportunity to work in a full team project early in my career, contributing to a better understanding of the collaborative approach required for development projects.",
     stack: [
       {
         name: 'Ruby',
@@ -233,10 +233,41 @@ const projects = [
     ],
   },
   {
+    name: 'Minesweeper',
+    date: 'June 2023',
+    mainImage: 'https://raw.githubusercontent.com/max13h/minesweeper/9da7fb7e96a788566079582b7473c44b161b3e91/img/flag.svg',
+    description: "A simple exercise assigned by my bootcamp, built in plain Javascript, HTML, and CSS. I love the Minesweeper so I aimed to create the best version possible. Here is the result.",
+    stack: [
+      {
+        name: 'Javascript',
+        isIcon: true,
+        icon: 'devicon:javascript',
+        imageLink: '',
+        link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+        class: ''
+      },
+      {
+        name: 'CSS',
+        isIcon: true,
+        icon: 'devicon:css3',
+        imageLink: '',
+        link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+        class: ''
+      },
+    ],
+    link: 'https://github.com/max13h/minesweeper',
+    textLink: 'Check the repo',
+    images: [
+      'https://raw.githubusercontent.com/max13h/minesweeper/master/img/minesweeper_menu.png',
+      'https://raw.githubusercontent.com/max13h/minesweeper/master/img/minesweeper_win.png',
+      'https://raw.githubusercontent.com/max13h/minesweeper/master/img/minesweeper_loose.png'
+    ],
+  },
+  {
     name: 'Portfolio',
     date: 'February 2024',
     mainImage: 'https://raw.githubusercontent.com/max13h/portfolio-max13h/master/public/portfolio-max13h.png',
-    description: "This is the website you're currently on. I wanted my portfolio to be creative with animations, transitions and showcase my knowledge of CSS in global aspect.",
+    description: "This is the website you are currently on. \nI aimed for my portfolio to be creative, incorporating animations, transitions, and showcasing my proficiency in CSS and Javascript on a global aspects. \nIt took me nearly two weeks to complete it entirely, and I am proud to say that I love the result.",
     stack: [
       {
         name: 'Nuxt',
