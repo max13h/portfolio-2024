@@ -25,7 +25,7 @@
               t-contact-icons
               text-light
               w-32 sm:w-36 md:w-40 lg:w-48 xl:w-56
-              h-32 sm:h-36 md:h-4w-40 lg:h-48 xl:h-5w-56"
+              h-32 sm:h-36 md:h-4w-40 lg:h-48 xl:h-56"
             />
         </NuxtLink>
 
@@ -37,7 +37,7 @@
               text-light
               t-contact-icons
               w-32 sm:w-36 md:w-40 lg:w-48 xl:w-56
-              h-32 sm:h-36 md:h-4w-40 lg:h-48 xl:h-5w-56"
+              h-32 sm:h-36 md:h-4w-40 lg:h-48 xl:h-56"
               @click="copyContent"
             />
         </NuxtLink>
