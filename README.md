@@ -2,4 +2,4 @@
 
 # Portfolio max13h
 
-Simple portfolio to showcase my actual work. Using tools & librairies such as Nuxtjs - Tailwind - GSAP
+Simple portfolio to showcase my actual work. Using tools & librairies such as Nuxt - Tailwind - GSAP
