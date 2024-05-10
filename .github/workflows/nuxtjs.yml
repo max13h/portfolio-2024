@@ -32,11 +32,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.0.2
-        with:
-          # Used to specify a package manager for caching in the default directory. Supported values: npm, yarn, pnpm.
-          cache: pnpm
-          # Used to specify the path to a dependency file: package-lock.json, yarn.lock, etc. Supports wildcards or a list of file names for caching multiple dependencies.
-          cache-dependency-path: pnpm-lock.yaml
       - name: Setup pnpm
         uses: pnpm/action-setup@v4.0.0
       - name: Setup Pages
