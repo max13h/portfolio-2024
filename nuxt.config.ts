@@ -37,5 +37,9 @@ export default defineNuxtConfig({
       'lg':	1024,
       'xl':	1280
     }
+  },
+  routeRules: {
+    // Disable homepage pre-rendered at build time
+    '/': { prerender: false },
   }
 })
