@@ -41,5 +41,11 @@ export default defineNuxtConfig({
   buildModules: [
     'floating-vue/nuxt',
   ],
-  ssr: false
+  ssr: false,
+  nitro: {
+    prerender: {
+      // Workaround for "Error: [404] Page not found: /manifest.json"
+      failOnError: false,
+    }
+  }
 })
