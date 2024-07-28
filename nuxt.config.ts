@@ -38,5 +38,4 @@ export default defineNuxtConfig({
       'xl':	1280
     }
   },
-  mode: 'static',
 })
