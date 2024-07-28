@@ -38,16 +38,5 @@ export default defineNuxtConfig({
       'xl':	1280
     }
   },
-  ssr: false,
-  nitro: {
-    prerender: {
-      routes: [
-        '/_ipx/secretproject/logo_secretproject.png',
-        '/_ipx/secretproject/logo_secretproject.png',
-        '/_ipx/secretproject/sign_in_screen.png',
-        '/_ipx/secretproject/database_schema.png',
-      ]
-    }
-  },
   mode: 'static',
 })
