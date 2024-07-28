@@ -7,10 +7,8 @@
     "generate": "nuxi generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "build": "nuxt build --preset github_pages",
+    "build": "nuxt build",
     "start": "node .output/server/index.mjs",
-    "predeploy": "nuxt generate",
-    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.11.2",
