@@ -7,7 +7,7 @@
     "generate": "nuxi generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "build": "nuxt build",
+    "build": "nuxt build --preset github_pages",
     "start": "node .output/server/index.mjs",
   },
   "devDependencies": {
