@@ -3,7 +3,7 @@
     <div class="t-group-mynameis text-end relative">
       <p ref="mynameis" class="t-mynameis mix-blend-difference text-light inline-block text-big3 me-4 lg:me-16">
         My age is<br/>
-        <span class="font-bold tracking-widst text-light" style="font-family: 'farnhamtext-regularlfregular';">23 years</span>
+        <span class="font-bold tracking-widst text-light" style="font-family: 'farnhamtext-regularlfregular';">{{ new Date().getFullYear() - 2001 - (new Date() < new Date(new Date().getFullYear(), 1, 27) ? 1 : 0) }} years</span>
       </p>
       <div class="t-imageofme rounded-full overflow-hidden flex justify-center items-center absolute
         top-full md:top-2/3

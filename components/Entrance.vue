@@ -6,7 +6,7 @@
       </div>
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <p class="text-xl font-light overflow-hidden">
-          <span class="t-portfoliomax13h text-light text-sm font-light inline-block text-center">Portfolio - Maxime Hmae</span>
+          <span class="t-portfoliomax13h text-light text-sm font-light inline-block text-center">Portfolio - {{ new Date().getFullYear() }}</span>
         </p>
       </div>
     </div>
