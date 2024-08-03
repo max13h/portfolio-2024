@@ -148,6 +148,14 @@ const projects = [
         link: 'https://vitejs.dev',
         class: ''
       },
+      {
+        name: 'Vitest',
+        isIcon: true,
+        icon: 'devicon:vitest',
+        imageLink: '',
+        link: 'https://vitest.dev',
+        class: ''
+      }
     ],
     link: 'https://github.com/max13h/',
     textLink: 'My github (not the project)',
